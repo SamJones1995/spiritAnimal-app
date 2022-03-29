@@ -1,3 +1,11 @@
+import MainView from "../views/MainView.js";
+import ZebraView from "../views/ZebraView.js";
+import OcelotView from "../views/OcelotView.js";
+import RhinoView from "../views/RhinoView.js";
+import ButterflyView from "../views/ButterflyView.js";
+import ElephantView from "../views/ElephantView.js";
+import DogView from "../views/DogView.js";
+
 const navigateTo = url => {
   history.pushState(null, null, url);
   router();
@@ -5,13 +13,13 @@ const navigateTo = url => {
 
 const router = async () => {
   const routes = [
-    { path: "/", view: () => console.log ("Viewing Main Page")},
-    { path: "/zebra", view: () => console.log ("Viewing Zebra Page")},
-    { path: "/ocelot", view: () => console.log ("Viewing Ocelot Page")},
-    { path: "/rhino", view: () => console.log ("Viewing Rhino Page")},
-    { path: "/butterfly", view: () => console.log ("Viewing Butterfly Page")},
-    { path: "/elephant", view: () => console.log ("Viewing Elephant Page")},
-    { path: "/dog", view: () => console.log ("Viewing Dog Page")}
+    { path: "/", view: MainView},
+    { path: "/zebra", view: ZebraView},
+    { path: "/ocelot", view: OcelotView},
+    { path: "/rhino", view: RhinoView},
+    { path: "/butterfly", view: ButterflyView},
+    { path: "/elephant", view: ElephantView},
+    { path: "/dog", view: DogView}
   ];
 
   //Test route for potential match
@@ -32,7 +40,11 @@ const router = async () => {
     };
   }
 
-  console.log(match.route.view());
+  const view = new match.route.view();
+
+  document.querySelector("#app").innerHTML = await view.getHtml();
+
+  
 };
 
 window.addEventListener("popstate", router);
