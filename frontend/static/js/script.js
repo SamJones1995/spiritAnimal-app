@@ -47,6 +47,7 @@ const router = async () => {
   
 };
 
+//allows for use of Back button in browser to return to previous view
 window.addEventListener("popstate", router);
 
 function randomlink(){
@@ -79,4 +80,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   router();
+});
+
+// Get the modal
+
+
+function modalLoad() {
+  var modal = document.getElementById("warnModal");
+  const btn = document.getElementById("myBtn");
+  // Get the <span> element that closes the modal
+  const span = document.getElementsByClassName("modal-close")[0];
+  // Close modal when user clicks Yes
+  const confirm = document.getElementById("modal-yes"); 
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  confirm.onclick = function() {
+    modal.style.display = "none";
+  }
+}
+
+
+window.onload = function(){
+  modalLoad();
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+//enables user to go through process again after hitting back button
+jQuery(document).ready(function($) {
+
+  if (window.history && window.history.pushState) {
+
+    window.history.pushState('forward', null, './#forward');
+
+    $(window).on('popstate', function() {
+      modalLoad();
+        });
+      }
 });

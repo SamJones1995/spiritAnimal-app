@@ -3,7 +3,7 @@ import AbstractView from "./AbstractView.js";
 export default class extends AbstractView {
   constructor() {
     super();
-    this.setTitle("SP App");
+    this.setTitle("Spirit Animal App");
   }
 
   async getHtml() {
@@ -12,10 +12,10 @@ export default class extends AbstractView {
     <p>
       Click below and fate will decide your chosen Spirit Animal
     </p>
-    <a href="/" data-link>Find your animal guide</a>
+    <button id="myBtn">Find your animal guide</button>
     <footer class="page-footer">
 			<p>Find me on</p>
-			<div class="social-media"><img alt="Github" src="img/github_icon.svg"> <img alt="Twitter" src="img/twitter_icon.svg"> <img alt="LinkedIn" src="img/linkedin_icon.svg"></div>
+			<div class="social-media"><img alt="Github" src="img/github_icon.svg"> <img alt="LinkedIn" src="img/linkedin_icon.svg"></div>
 		</footer>
     
     `;
