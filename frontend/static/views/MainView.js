@@ -12,7 +12,9 @@ export default class extends AbstractView {
     <p>
       Click below and fate will decide your chosen Spirit Animal
     </p>
-    <button id="myBtn">Find your animal guide</button>
+    
+    
+    <img id="myBtn" src="static/images/background.png"/>
     <footer class="page-footer">
 			<p>Find me on</p>
 			<div class="social-media"><img alt="Github" src="img/github_icon.svg"> <img alt="LinkedIn" src="img/linkedin_icon.svg"></div>
