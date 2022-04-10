@@ -16,16 +16,17 @@ body {
 	  font-weight: 400;
 	  font-size: 16px;
 	  line-height: 1.6;
-    background: linear-gradient(-45deg, #055827, #e73c7e, #88d523, #23d5ab);
+    background-color: #f5eec2;
+    /*background: linear-gradient(-45deg, #055827, #e73c7e, #88d523, #23d5ab);
 	  background-size: 400% 400%;
 	  animation: gradient 15s ease infinite;
-	  height: 100vh;
+	  height: 100vh;*/
 }
 
 
 
 div {
-  background-color: bisque;
+  background-color: #a9c25d;
   border: 5px black;
   border-radius: 25px !important;
   padding: 1rem;
