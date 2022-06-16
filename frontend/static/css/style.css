@@ -1,7 +1,6 @@
-@font-face {
-  font-family: 'SpiritMedium';
-  src: url('/font/SpiritMedium-vwL.ttf');
-}
+
+  @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Poiret+One&display=swap");
+
 
 
 body {
@@ -19,22 +18,62 @@ body {
     background: linear-gradient(-45deg, #055827, #e73c7e, #88d523, #23d5ab);
 	  background-size: 400% 400%;
 	  animation: gradient 15s ease infinite;
-	  height: 100vh;
+	  /* height: 100vh; */
 }
 
 
 
 div {
-  background-color: bisque;
+
+  /* background-color: bisque;
   border: 5px black;
   border-radius: 25px !important;
-  padding: 1rem;
-  margin-bottom: auto;
-  margin-top: 20px;
+  padding: 1rem; */
+  
+  
+  /* margin: 20px 20px; */
  
   
 }
 
+#app {
+  font-family: 'Poiret One', cursive;
+  display: grid;
+  grid-template-columns: auto-fit, minmax(320px, 1fr);
+  margin-bottom: 10%;
+  background-color: bisque;
+  border: 5px black;
+  border-radius: 25px !important;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+#myBtn {
+  position: relative;
+  border-radius: 25px !important;
+  width: 100%;
+  max-width: 700px;
+  max-height: 700px;
+  cursor: pointer;
+}
+
+#home {
+  color: white;
+  font-size: large;
+  background-color: #88d523;
+  font-family: 'Poiret One', cursive;
+  padding: 2px;
+  width: 50%;
+}
+
+#home:hover {
+  transition: 0.5s;
+  background-color: pink;
+}
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -61,18 +100,31 @@ div {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  font-family: 'Poiret One', cursive;
+  background-color: bisque;
+  border-radius: 25px !important;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 2px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: fit-content; /* Could be more or less, depending on screen size */
 }
 
-.close {
-  color: #aaa;
+.modal-close {
+  position: relative;
+  
   float: right;
-  font-size: 28px;
+  color: #aaa;
+  
+  font-size: 38px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-x {
+  position: relative;
+  top: 0;
+  width: 15px;
+  height: 15px !important;
 }
 
 .close:hover,
@@ -80,4 +132,24 @@ div {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-text {
+  margin-top: 2px;
+  width: 200px;
+}
+
+.icon-img {
+  padding: 10px;
+  max-width: 30px;
+  max-height: 30px;
+
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+}
+
+.icon-img:hover {
+  transition: 0.5s;
+  fill: white;
 }
