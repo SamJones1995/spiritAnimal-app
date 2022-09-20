@@ -82,6 +82,25 @@ document.addEventListener("DOMContentLoaded", () => {
   router();
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const home = document.getElementById("home");
+  document.body.addEventListener("click", e => {
+    console.log(e);
+    if (e.id === "home") {
+      e.preventDefault();
+      navigateTo(MainView());
+    }
+  });
+  router();
+});
+
+function homeButton() {
+  const home = document.getElementById("home");
+  home.onclick = function() { navigateTo(MainView()); }
+}
+
+
 // Get the modal
 
 
@@ -108,12 +127,13 @@ function modalLoad() {
 
 window.onload = function(){
   modalLoad();
-}
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
 }
 
 //enables user to go through process again after hitting back button
